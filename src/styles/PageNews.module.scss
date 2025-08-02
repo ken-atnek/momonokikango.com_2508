@@ -1,0 +1,35 @@
+/* =================================
+ * 	ももの木訪問看護ステーション 運営規定
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+/* =================================
+ * HEAD
+ * ------------------------------ */
+.containerContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em 8em;
+    h3 {
+        font-size: FZ(30);
+        text-align: center;
+        line-height: 1.6em;
+        letter-spacing: 0.04em;
+    }
+    .boxDetail {
+        font-size: inherit;
+        max-width: 94rem;
+        margin-top: 3em;
+        p {
+            font-size: FZ(18);
+            letter-spacing: 0.04em;
+            line-height: 1.8em;
+        }
+    }
+}

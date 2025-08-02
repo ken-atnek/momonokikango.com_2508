@@ -1,0 +1,204 @@
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+.containerHeader {
+    position: relative;
+    display: flex;
+    padding-inline: 2em;
+    justify-content: center;
+    z-index: 5;
+    transition: 0.5s ease-out;
+    background-color: #fff;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: calc(100% - 1px);
+        width: 100vw;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30'%3E%3Cpath d='M 0 30 Q 37.5 30 75 15 Q 150 -15 225 15 Q 262.5 30 300 30 Q 337.5 30 375 15 Q 450 -15 525 15 Q 562.5 30 600 30 Q 637.5 30 675 15 Q 750 -15 825 15 Q 862.5 30 900 30 Q 937.5 30 975 15 Q 1050 -15 1125 15 Q 1162.5 30 1200 30 L 1200 30 L 0 30 Z' fill='%23ffffff'/%3E%3C/svg%3E")
+            no-repeat center bottom;
+        background-size: contain;
+        aspect-ratio: 4;
+        z-index: 1;
+        @include sp {
+            display: none;
+        }
+    }
+    @include sp {
+        padding: 0;
+    }
+    // &.is-fixed {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     z-index: 100;
+    //     box-shadow: 0 2px 10px rgb(0 0 0 / 10%); // Optional effect
+    // }
+    article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5em 1em;
+        max-width: $articleMaxWidth;
+        flex-wrap: wrap;
+        @include sp {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            flex-direction: column;
+            padding: 10vw 0;
+            background-color: #fff;
+            translate: 100vw;
+            transition: 0.3s ease-out;
+            opacity: 0;
+            gap: 14vw 0;
+            justify-content: center;
+            &.is-open {
+                translate: 0;
+                opacity: 1;
+            }
+        }
+        h1 {
+            font-size: FZ(21);
+            position: relative;
+            padding-left: 2.6em;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                left: 0;
+                width: 2.4em;
+                background: url(../../../assets/images/logo.webp) no-repeat
+                    center center / contain;
+                aspect-ratio: 55/50;
+            }
+            a {
+                font-size: inherit;
+                letter-spacing: 0.08em;
+            }
+        }
+        nav {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            .linkContainer {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                font-size: inherit;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 6vw 0;
+                    justify-content: center;
+                }
+                .itemLink {
+                    position: relative;
+                    font-size: FZ(16);
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    letter-spacing: 0.07em;
+                    text-decoration: none;
+                    color: #000;
+                    padding-inline: 0.7em;
+                    cursor: pointer;
+                    transition: 0.3s ease-out;
+
+                    &.is-active {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .boxSns {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 0 1em;
+            @include sp {
+                margin-top: 6vw;
+                gap: 0 6vw;
+            }
+            a {
+                font-size: inherit;
+                width: 2em;
+                aspect-ratio: 1;
+                @include sp {
+                    width: 8vw;
+                }
+                img {
+                    width: 100%;
+                    aspect-ratio: 1;
+                }
+            }
+        }
+    }
+}
+.hamburgerButton {
+    position: fixed;
+    top: 6vw;
+    right: 0;
+    width: 11vw;
+    aspect-ratio: 1;
+    border-top: solid 1px #fff;
+    border-left: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+    z-index: 100;
+    display: none;
+    background-color: #db8713;
+    border-top-left-radius: 2vw;
+    border-bottom-left-radius: 2vw;
+    @include sp {
+        display: block;
+    }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 55%;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.3s ease-out;
+        &:nth-of-type(1) {
+            translate: -50% calc(-50% - 6px);
+        }
+        &:nth-of-type(2) {
+            translate: -50% -50%;
+        }
+        &:nth-of-type(3) {
+            translate: -50% calc(-50% + 6px);
+        }
+    }
+    &.is-open {
+        span {
+            transition: 0.3s ease-out;
+            &:nth-of-type(1) {
+                translate: -50% -50%;
+                rotate: 45deg;
+            }
+            &:nth-of-type(2) {
+                translate: 150% -50%;
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                translate: -50% -50%;
+                rotate: -45deg;
+            }
+        }
+    }
+}

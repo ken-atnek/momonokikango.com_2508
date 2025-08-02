@@ -1,0 +1,98 @@
+/* =================================
+ * 	ももの木訪問看護ステーション 会社概要
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+/* =================================
+ * HEAD
+ * ------------------------------ */
+.containerContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em 8em;
+    dl {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        font-size: inherit;
+        width: 100%;
+        max-width: 69rem;
+        dt {
+            font-size: FZ(18);
+            color: $base-black;
+            border-bottom: solid 2px rgba(216, 215, 201, 0.5);
+            padding-bottom: 0.3em;
+        }
+        dd {
+            font-size: FZ(18);
+            display: flex;
+            flex-direction: column;
+            margin-top: 0.5em;
+            margin-bottom: 2em;
+            padding-left: 1em;
+            letter-spacing: 0.08em;
+            a {
+                font-size: inherit;
+                letter-spacing: 0.08em;
+            }
+        }
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5em;
+        max-width: $articleMaxWidth;
+        h3 {
+            font-size: FZ(24);
+        }
+        address {
+            border-top: solid 2px rgba(216, 215, 201, 0.5);
+            border-bottom: solid 2px rgba(216, 215, 201, 0.5);
+            font-size: FZ(18);
+            display: flex;
+            gap: 0 0.5em;
+            padding-block: 0.5em;
+            margin-top: 0.5em;
+            letter-spacing: 0.04em;
+        }
+        .boxImage {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 3em;
+            gap: 0 2em;
+            figure {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em 0;
+                img {
+                    aspect-ratio: 1.5;
+                    object-fit: cover;
+                }
+                figcaption {
+                    font-size: FZ(18);
+                    letter-spacing: 0.04em;
+                    line-height: 1.6em;
+                }
+            }
+        }
+        .itemMap {
+            position: relative;
+            font-size: inherit;
+            width: 100%;
+            margin-top: 3em;
+            iframe {
+                width: 100%;
+                aspect-ratio: 2;
+            }
+        }
+    }
+}

@@ -1,0 +1,317 @@
+/* =================================
+ * 	ももの木訪問看護ステーション CONTACT
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+/* =================================
+ * CONTACT
+ * ------------------------------ */
+
+.blockFormCaseStudy,
+.blockFormContact {
+    max-width: 78rem;
+    h3 {
+        font-size: FZ(30);
+        border-bottom: 1px solid #000;
+        padding-bottom: 0.3em;
+    }
+    .sidebarH3 {
+        font-size: FZ(16);
+        letter-spacing: 0.04em;
+        line-height: 1.6em;
+    }
+    .itemDetail {
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        @include sp {
+            padding: 0;
+        }
+        .blockForm {
+            position: relative;
+            font-size: inherit;
+            .box_btn {
+                color: $base-white;
+                font-size: inherit;
+                button {
+                    font-size: FZ(14);
+                    background-color: rgb(60, 175, 201);
+                    padding-block: 1em;
+                    border-radius: 0.3rem;
+                    transition: 0.3s ease-out;
+                    @include sp {
+                        padding-block: 4vw;
+                        font-size: FZ(16);
+                    }
+                    &:hover {
+                        background-color: #929292;
+                    }
+                }
+            }
+            .blockFormInner {
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                gap: 2em 0;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4vw 0;
+                }
+                // inputタグ初期化
+                input {
+                    margin: 0;
+                    padding: 0;
+                    background: none;
+                    border: none;
+                    border-radius: 0;
+                    outline: none;
+                    appearance: none;
+                }
+                // textareaタグ初期化
+                textarea {
+                    outline: none;
+                    min-height: 18lh;
+                    field-sizing: content;
+                    @include sp {
+                        min-height: 20lh;
+                    }
+                }
+                select,
+                textarea,
+                input[type="text"],
+                input[type="email"] {
+                    width: 100%;
+                    color: #555;
+                    padding: 0.8em;
+                    border-radius: 0.3rem;
+                    letter-spacing: 0.04em;
+                    border: solid 1px #a2b2b9;
+                    font-size: 1.6rem;
+                    background-color: #fff;
+                    @include sp {
+                        padding: 1em;
+                        width: 100%;
+                        font-size: 1.6rem;
+                    }
+                    &::placeholder {
+                        color: #8f8f8f;
+                    }
+                }
+                select {
+                    outline: none;
+                    appearance: none;
+                    cursor: pointer;
+                    @include sp {
+                        white-space: nowrap;
+                        min-width: 16em;
+                    }
+                }
+                dl {
+                    width: 100%;
+                    position: relative;
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3em 0;
+                    @include sp {
+                        gap: 2vw 0;
+                    }
+                    dt {
+                        font-size: FZ(16);
+                        display: flex;
+                        padding-top: 1.2em;
+                        // &.formRequired {
+                        //     &::after {
+                        //         content: "*";
+                        //         color: rgb(204 0 0);
+                        //         font-size: 1.4em;
+                        //         margin-left: 0.2em;
+                        //     }
+                        // }
+                    }
+                    dd {
+                        font-size: inherit;
+                        position: relative;
+                    }
+                    &.formListItem {
+                        dd {
+                            font-size: inherit;
+                            display: grid;
+                            grid-auto-flow: row;
+                            gap: 1em 1.6em;
+                            padding-block: 0.5em;
+                            label {
+                                position: relative;
+                                font-size: FZ(14);
+                                cursor: pointer;
+                                span {
+                                    padding-left: 1.8em;
+                                    position: relative;
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 0;
+                                        transform: translateY(-50%);
+                                        width: 1.3em;
+                                        aspect-ratio: 1;
+                                        background-color: #fff;
+                                        border: 2px solid #ccc;
+                                    }
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        top: 45%;
+                                        left: 0;
+                                        transform: translate(2px, -50%);
+                                        width: 1.2em;
+                                        @include svg-icon-check("ffffff");
+                                        opacity: 0;
+                                        transition: opacity 0.2s;
+                                    }
+                                }
+                                input[type="radio"] {
+                                    position: absolute;
+                                    opacity: 0;
+                                    pointer-events: none;
+                                }
+                                input[type="radio"]:checked + span::before {
+                                    border: 2px solid #000;
+                                    background-color: #000;
+                                }
+                                input[type="radio"]:checked + span::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+                .box_btn {
+                    display: grid;
+                    // grid-template-columns: repeat(2, 1fr);
+                    align-items: center;
+                    @include sp {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6vw 0;
+                    }
+                    .wrapRadio {
+                        font-size: inherit;
+                        color: #000;
+                        display: flex;
+                        position: relative;
+                        label {
+                            position: relative;
+                            font-size: inherit;
+                            padding-left: 1.8em;
+                            &::before,
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                translate: 0 -50%;
+                                width: 1.4em;
+                                aspect-ratio: 1;
+                                border-radius: 50%;
+                            }
+                            &::before {
+                                background-color: #fff;
+                                border: 1px solid #a2b2b9;
+                            }
+                            &::after {
+                                background-color: #a2b2b9;
+                                opacity: 0;
+                            }
+                            input {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 1.4em;
+                                aspect-ratio: 1;
+                                font-size: inherit;
+                                z-index: 1;
+                                cursor: pointer;
+                            }
+                            &:has(input[type="radio"]:checked)::after {
+                                opacity: 1;
+                                scale: 0.6;
+                            }
+                        }
+                        a {
+                            font-size: FZ(14);
+                            pointer-events: none;
+
+                            // プライバシーポリシー設置まで無効
+                        }
+                    }
+                    button {
+                        display: grid;
+                        width: 100%;
+                        place-content: center;
+                    }
+                }
+            }
+
+            // 確認画面
+            .statusConfirm {
+                width: 100%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 2em 0;
+                font-size: inherit;
+                @include sp {
+                    gap: 6vw 0;
+                    padding-top: 4vw;
+                }
+                p {
+                    align-self: center;
+                    font-size: FZ(16);
+                }
+                dl {
+                    display: flex;
+                    font-size: inherit;
+                    dt {
+                        font-size: FZ(14);
+                        color: #555;
+                        width: 10em;
+                    }
+                    dd {
+                        font-size: inherit;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5em 0;
+                        & > div {
+                            font-size: FZ(16);
+                        }
+                    }
+                }
+                .boxMessage {
+                    border: 1px solid #ccc;
+                    font-size: FZ(16);
+                    padding: 0.8em;
+                    line-height: 1.6em;
+                }
+                .box_btn {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    font-size: inherit;
+                    gap: 0 2em;
+                    margin-top: 1em;
+                    @include sp {
+                        margin-top: 10vw;
+                    }
+                }
+            }
+        }
+    }
+}

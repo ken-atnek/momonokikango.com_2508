@@ -1,0 +1,165 @@
+/* =================================
+ * 	ももの木訪問看護ステーション TOPページ
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+/* =================================
+ * HEAD
+ * ------------------------------ */
+.containerContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em 8em;
+    div {
+        font-size: inherit;
+    }
+    .listQuestions {
+        position: relative;
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 1px 0;
+        max-width: $articleMaxWidth;
+        @include sp {
+            width: 100%;
+        }
+        li {
+            background-color: rgba(216, 215, 201, 0.1);
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            @include sp {
+                width: 92vw;
+            }
+            button {
+                position: relative;
+                justify-content: flex-start;
+                color: #fff;
+                font-size: FZ(16);
+                padding: 1.4em 1em;
+                width: 100%;
+                transition: 0.3s ease-out;
+                text-align: left;
+                line-height: 1.6em;
+                background-color: #d8d7c9;
+                @include sp {
+                    padding: 3vw 2vw;
+                    font-size: FZ(12);
+                }
+                &.open {
+                    background-color: #352c2c;
+                    p {
+                        &::before {
+                            @include svg-arrow-blog("fff");
+                            rotate: 90deg;
+                        }
+                    }
+                }
+                &.closed {
+                    // background-color: #fff;
+                    // color: $base-black;
+                }
+                @include hover {
+                    background-color: #615757;
+                    color: #fff;
+                    p {
+                        &::before {
+                            @include svg-arrow-blog("fff");
+                        }
+                    }
+                }
+                p {
+                    font-size: inherit;
+                    position: relative;
+                    padding-left: 1.6em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 55%;
+                        translate: 0 -50%;
+                        width: 1.2em;
+                        @include svg-arrow-blog("fff");
+                        transition: 0.3s ease-out;
+                    }
+                }
+            }
+            .itemAnswer {
+                overflow: hidden;
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.4s ease;
+                opacity: 0;
+                max-height: 0;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                div {
+                    font-size: inherit;
+                    padding: 1.4em;
+                    letter-spacing: 0.08em;
+                    line-height: 1.6em;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2em 0;
+                    @include sp {
+                        padding: 4vw;
+                    }
+                    h4 {
+                        font-size: FZ(28);
+                        font-weight: 600;
+                        letter-spacing: 0.04em;
+                        line-height: 1.4em;
+                    }
+                    p {
+                        font-size: FZ(18);
+                        line-height: 1.8em;
+                        span {
+                            font-size: 1.2em;
+                            font-weight: 600;
+                        }
+                    }
+                    dl {
+                        font-size: inherit;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5em 0;
+                        margin-top: 2em;
+                        position: relative;
+                        dt {
+                            font-size: FZ(20);
+                            font-weight: 600;
+                        }
+                        dd {
+                            font-size: FZ(18);
+                        }
+                        &:not(:last-of-type) {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                translate: -50%;
+                                top: calc(100% + 0.8em);
+                                width: 1.4em;
+                                aspect-ratio: 1;
+                                border-bottom: 8px solid $base-black;
+                                border-right: 8px solid $base-black;
+                                rotate: 45deg;
+                            }
+                        }
+                    }
+                }
+                &.open {
+                    opacity: 1;
+                    max-height: 1000px;
+                }
+            }
+        }
+    }
+}

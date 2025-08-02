@@ -1,0 +1,81 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $base-pink;
+    padding: 2em 2em;
+    article {
+        display: flex;
+        justify-content: space-between;
+        max-width: $articleMaxWidth;
+        .boxInfo {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8em 0;
+            .name {
+                font-size: FZ(26);
+                letter-spacing: 0.04em;
+                span {
+                    margin-right: 0.3em;
+                }
+            }
+            address {
+                font-size: FZ(16);
+                letter-spacing: 0.04em;
+                span {
+                    margin-right: 0.5em;
+                }
+            }
+            .tel {
+                font-size: FZ(32);
+                font-weight: 600;
+                letter-spacing: 0.04em;
+                span {
+                    text-transform: uppercase;
+                    &::after {
+                        content: ":";
+                        margin-inline: 0.2em;
+                    }
+                }
+            }
+            .fax {
+                font-size: FZ(18);
+                font-weight: 600;
+                letter-spacing: 0.04em;
+                span {
+                    text-transform: uppercase;
+                    &::after {
+                        content: ":";
+                        margin-inline: 0.2em;
+                    }
+                }
+            }
+        }
+        .boxRight {
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            gap: 0.8em 0;
+            nav {
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                gap: 0.5em 0;
+                a {
+                    font-size: FZ(18);
+                    letter-spacing: 0.04em;
+                }
+            }
+            .copyright {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: FZ(12);
+                letter-spacing: 0.08em;
+            }
+        }
+    }
+}

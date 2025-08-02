@@ -1,0 +1,54 @@
+/* =================================
+ * 	PageHead
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+.containerPageHead {
+    background-color: #fbd5e3;
+    padding: 7em 2em 7em;
+    display: flex;
+    flex-direction: column;
+    .itemImage {
+        font-size: inherit;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        width: 14em;
+        right: 6vw;
+    }
+    article {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        max-width: $articleMaxWidth;
+        h2 {
+            font-size: FZ(40);
+            font-weight: 600;
+            color: $base-black;
+            letter-spacing: 0.12em;
+        }
+        .breadcrumb {
+            align-self: flex-end;
+            font-size: inherit;
+            display: flex;
+            align-items: center;
+            a {
+                font-size: FZ(14);
+                @include SunSerif;
+                &::after {
+                    content: "|";
+                    margin-inline: 0.5em;
+                    display: inline-block;
+                    translate: 0 -0.1em;
+                }
+            }
+            span {
+                font-size: FZ(14);
+            }
+        }
+    }
+}
