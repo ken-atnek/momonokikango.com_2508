@@ -54,7 +54,7 @@ const BlockServiceList = () => {
         ),
       },
       {
-        title: 'ご利用までの流れ?',
+        title: 'ご利用までの流れ',
         answer: (
           <>
             <dl>

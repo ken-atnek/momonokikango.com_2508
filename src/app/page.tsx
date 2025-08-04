@@ -47,10 +47,10 @@ export default function Home() {
             <Link href="/service/">
               <Image src={Nav01} alt="提供サービス" width={200} height={200} />
             </Link>
-            <Link href="#">
+            <Link href="/news/">
               <Image src={Nav02} alt="お知らせ" width={200} height={200} />
             </Link>
-            <Link href="#">
+            <Link href="/case-study/">
               <Image
                 src={Nav03}
                 alt="災害・感染症対策"
@@ -61,7 +61,7 @@ export default function Home() {
             <Link href="/company/">
               <Image src={Nav04} alt="会社概要" width={200} height={200} />
             </Link>
-            <Link href="#">
+            <Link href="/contact/">
               <Image src={Nav05} alt="お問い合わせ" width={200} height={200} />
             </Link>
           </nav>

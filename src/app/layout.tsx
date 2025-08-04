@@ -77,6 +77,10 @@ export default function RootLayout({
           name="format-detection"
           content="telephone=no, address=no, email=no"
         />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
       </head>
       <body>
         <Header />

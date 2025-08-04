@@ -131,7 +131,7 @@ const BlockFormCaseStudy = () => {
                   </dd>
                 </dl>
                 <dl className={styles.formListItem}>
-                  <dt>安否確認</dt>
+                  <dt className={styles.formRequired}>安否確認</dt>
                   <dd>
                     <label>
                       <input

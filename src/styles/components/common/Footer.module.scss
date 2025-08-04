@@ -61,8 +61,10 @@
                 font-size: FZ(32);
                 font-weight: 600;
                 letter-spacing: 0.04em;
+                pointer-events: none;
                 @include sp {
                     font-size: FZ(28);
+                    pointer-events: auto;
                 }
                 span {
                     text-transform: uppercase;
@@ -76,6 +78,7 @@
                 font-size: FZ(18);
                 font-weight: 600;
                 letter-spacing: 0.04em;
+                pointer-events: none;
                 span {
                     text-transform: uppercase;
                     &::after {
