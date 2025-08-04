@@ -9,11 +9,11 @@
 // このファイル全体のルールを無効にする
 .containerPageHead {
     background-color: #fbd5e3;
-    padding: 7em 2em 7em;
+    padding: 7em 2em;
     display: flex;
     flex-direction: column;
     @include sp {
-        padding: 10vw 4vw 6vw 4vw;
+        padding: 10vw 4vw 6vw;
         margin-top: 6vw;
     }
     .itemImage {

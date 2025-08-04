@@ -14,11 +14,11 @@
 .containerHead {
     display: flex;
     flex-direction: column;
-    background: url(../assets/images/top/head-bg.webp) no-repeat center
+    background: url("../assets/images/top/head-bg.webp") no-repeat center
         center/cover;
     padding: 5em 0 0;
     @include sp {
-        padding: 6vw 0 0 0;
+        padding: 6vw 0 0;
     }
     .blockTitle {
         font-size: inherit;
@@ -66,7 +66,7 @@
                     translate: 0 -50%;
                     left: 0;
                     width: 2em;
-                    background: url(../assets/images/top/head-title-icon.webp)
+                    background: url("../assets/images/top/head-title-icon.webp")
                         no-repeat center center/contain;
                     aspect-ratio: 340/303;
                     @include sp {
@@ -80,7 +80,6 @@
             }
         }
     }
-
     .blockHead {
         background-color: rgba($base-pink, 0.9);
         display: flex;
@@ -120,7 +119,7 @@
         background-color: rgba(#fff, 0.7);
         display: flex;
         justify-content: center;
-        padding: 5em 0 5em;
+        padding: 5em 0;
         @include sp {
             flex-direction: column;
             padding: 8vw 4vw;
@@ -149,7 +148,7 @@
                 @include sp {
                     min-width: unset;
                     width: 100%;
-                    padding: 4vw 4vw;
+                    padding: 4vw;
                     gap: 6vw 0;
                 }
                 h3 {

@@ -16,7 +16,6 @@
     flex-direction: column;
     align-items: center;
     padding: 5em 2em 8em;
-    padding: 5em 2em 8em;
     @include sp {
         padding: 6vw 0 2vw;
     }
@@ -33,7 +32,7 @@
         dt {
             font-size: FZ(18);
             color: $base-black;
-            border-bottom: solid 2px rgba(216, 215, 201, 0.5);
+            border-bottom: solid 2px rgb(216 215 201 / 50%);
             padding-bottom: 0.3em;
         }
         dd {
@@ -63,8 +62,8 @@
             font-size: FZ(24);
         }
         address {
-            border-top: solid 2px rgba(216, 215, 201, 0.5);
-            border-bottom: solid 2px rgba(216, 215, 201, 0.5);
+            border-top: solid 2px rgb(216 215 201 / 50%);
+            border-bottom: solid 2px rgb(216 215 201 / 50%);
             font-size: FZ(18);
             display: flex;
             gap: 0 0.5em;

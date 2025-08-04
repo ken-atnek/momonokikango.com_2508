@@ -14,10 +14,10 @@
     background-color: #fff;
     padding-bottom: 2em;
     padding-top: 2em;
-
     @include sp {
         padding: 6vw 0 0 4vw;
     }
+
     // &.is-fixed {
     //     position: fixed;
     //     top: 0;
@@ -47,7 +47,7 @@
                 translate: 0 -50%;
                 left: 0;
                 width: 2.4em;
-                background: url(../../../assets/images/logo.webp) no-repeat
+                background: url("../../../assets/images/logo.webp") no-repeat
                     center center / contain;
                 aspect-ratio: 55/50;
             }
@@ -82,6 +82,7 @@
                     translate: 0;
                     opacity: 1;
                 }
+
                 // &::before {
                 //     content: "";
                 //     position: absolute;
