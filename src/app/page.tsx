@@ -27,12 +27,22 @@ export default function Home() {
   return (
     <>
       <section className={styles.containerHead}>
-        <div className={styles.boxTitle}>
-          <p>ももの木訪問看護ステーション</p>
-          <span>芦北、水俣、津奈木エリアの訪問看護</span>
-        </div>
+        <article className={styles.blockTitle}>
+          <div className={styles.boxTitle}>
+            <p>
+              ももの木訪問看護
+              <br className="sp" />
+              ステーション
+            </p>
+            <span>芦北、水俣、津奈木エリアの訪問看護</span>
+          </div>
+        </article>
         <article className={styles.blockHead}>
-          <h2>各ページの情報は下のバナーをクリックするとご覧頂けます</h2>
+          <h2>
+            各ページの情報は
+            <br />
+            下のバナーをクリックするとご覧頂けます
+          </h2>
           <nav>
             <Link href="/service/">
               <Image src={Nav01} alt="提供サービス" width={200} height={200} />

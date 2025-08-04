@@ -14,23 +14,9 @@
     background-color: #fff;
     padding-bottom: 2em;
     padding-top: 2em;
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: calc(100% - 1px);
-        width: 100vw;
-        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30'%3E%3Cpath d='M 0 30 Q 37.5 30 75 15 Q 150 -15 225 15 Q 262.5 30 300 30 Q 337.5 30 375 15 Q 450 -15 525 15 Q 562.5 30 600 30 Q 637.5 30 675 15 Q 750 -15 825 15 Q 862.5 30 900 30 Q 937.5 30 975 15 Q 1050 -15 1125 15 Q 1162.5 30 1200 30 L 1200 30 L 0 30 Z' fill='%23ffffff'/%3E%3C/svg%3E")
-            no-repeat center bottom;
-        background-size: contain;
-        aspect-ratio: 4;
-        z-index: 1;
-        @include sp {
-            display: none;
-        }
-    }
+
     @include sp {
-        padding: 0;
+        padding: 6vw 0 0 4vw;
     }
     // &.is-fixed {
     //     position: fixed;
@@ -47,30 +33,13 @@
         gap: 0.5em 1em;
         max-width: $articleMaxWidth;
         flex-wrap: wrap;
-        @include sp {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh;
-            flex-direction: column;
-            padding: 10vw 0;
-            background-color: #fff;
-            translate: 100vw;
-            transition: 0.3s ease-out;
-            opacity: 0;
-            gap: 14vw 0;
-            justify-content: center;
-            &.is-open {
-                translate: 0;
-                opacity: 1;
-            }
-        }
         h1 {
             font-size: FZ(21);
             position: relative;
             padding-left: 2.6em;
+            @include sp {
+                font-size: FZ(18);
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -94,21 +63,56 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: flex-end;
+            @include sp {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 80vw;
+                height: 100vh;
+                height: 100dvh;
+                padding: 10vw 0;
+                background-color: #fff;
+                translate: 100vw;
+                transition: 0.3s ease-out;
+                opacity: 0;
+                gap: 14vw 0;
+                padding-left: 20vw;
+                justify-content: flex-start;
+                &.is-open {
+                    translate: 0;
+                    opacity: 1;
+                }
+                // &::before {
+                //     content: "";
+                //     position: absolute;
+                //     right: 0;
+                //     width: 100vw;
+                //     height: 100vh;
+                //     height: 100dvh;
+                //     background-color: rgba(#fff, 0.8);
+                // }
+            }
+            .mobileOnly {
+                display: none;
+                @include sp {
+                    display: inline;
+                    font-size: FZ(18);
+                    padding-inline: 0.7em;
+                    letter-spacing: 0.07em;
+                }
+            }
             .linkContainer {
                 position: relative;
                 display: flex;
-                justify-content: flex-end;
                 font-size: inherit;
                 @include sp {
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    gap: 6vw 0;
-                    justify-content: center;
+                    gap: 8vw 0;
                 }
                 .itemLink {
                     position: relative;
-                    font-size: FZ(16);
+                    font-size: FZ(18);
                     text-transform: uppercase;
                     font-weight: 500;
                     letter-spacing: 0.07em;
@@ -117,7 +121,6 @@
                     padding-inline: 0.7em;
                     cursor: pointer;
                     transition: 0.3s ease-out;
-
                     &.is-active {
                         font-weight: 500;
                     }
@@ -151,18 +154,18 @@
 }
 .hamburgerButton {
     position: fixed;
-    top: 6vw;
+    top: 4vw;
     right: 0;
     width: 11vw;
     aspect-ratio: 1;
-    border-top: solid 1px #fff;
-    border-left: solid 1px #fff;
-    border-bottom: solid 1px #fff;
+    border-top: solid 1px #d8d7c9;
+    border-left: solid 1px #d8d7c9;
+    border-bottom: solid 1px #d8d7c9;
     z-index: 100;
     display: none;
-    background-color: #db8713;
-    border-top-left-radius: 2vw;
-    border-bottom-left-radius: 2vw;
+    background-color: #fff;
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 1vw;
     @include sp {
         display: block;
     }
@@ -172,7 +175,7 @@
         left: 50%;
         width: 55%;
         height: 2px;
-        background-color: #fff;
+        background-color: #d8d7c9;
         transition: 0.3s ease-out;
         &:nth-of-type(1) {
             translate: -50% calc(-50% - 6px);

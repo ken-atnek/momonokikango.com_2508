@@ -17,7 +17,9 @@ const Footer = () => {
           </div>
           <address>
             <span>〒869-5305</span>
-            熊本県葦北郡芦北町田浦町653サテライトオフィス田浦202
+            熊本県葦北郡芦北町田浦町653
+            <br className="sp" />
+            サテライトオフィス田浦202
           </address>
           <ExternalLink
             href="tel:0966838522"

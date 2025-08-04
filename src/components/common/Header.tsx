@@ -9,9 +9,7 @@ import { navMenu } from '@/data/navMenuData';
 import styles from '@/styles/components/common/Header.module.scss';
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 const Header = () => {
-  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -19,12 +17,26 @@ const Header = () => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflowY = 'scroll';
+      document.body.dataset.scrollY = scrollY.toString();
     } else {
-      document.body.style.overflow = '';
+      const scrollY = document.body.dataset.scrollY || '0';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
+      window.scrollTo(0, parseInt(scrollY));
     }
+
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
     };
   }, [isOpen]);
 
@@ -77,6 +89,9 @@ const Header = () => {
           }`}
         >
           <div className={styles.linkContainer}>
+            <Link href="/" className={styles.mobileOnly} onClick={closeMenu}>
+              TOP
+            </Link>
             {navMenu.map((item, index) => (
               <Link
                 key={index}

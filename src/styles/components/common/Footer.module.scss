@@ -6,20 +6,40 @@
     align-items: center;
     background-color: $base-pink;
     padding: 2em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     article {
         display: flex;
         justify-content: space-between;
         max-width: $articleMaxWidth;
+        @include sp {
+            flex-direction: column;
+            gap: 6vw 0;
+        }
         .boxInfo {
             font-size: inherit;
             display: flex;
             flex-direction: column;
             gap: 0.8em 0;
+            @include sp {
+                gap: 2vw 0;
+            }
             .name {
                 font-size: FZ(26);
                 letter-spacing: 0.04em;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: FZ(18);
+                    gap: 0.3em 0;
+                }
                 span {
                     margin-right: 0.3em;
+                    @include sp {
+                        margin-right: unset;
+                        font-size: 0.8em;
+                    }
                 }
             }
             address {
@@ -28,11 +48,18 @@
                 span {
                     margin-right: 0.5em;
                 }
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
             .tel {
                 font-size: FZ(32);
                 font-weight: 600;
                 letter-spacing: 0.04em;
+                @include sp {
+                    font-size: FZ(28);
+                }
                 span {
                     text-transform: uppercase;
                     &::after {
@@ -75,6 +102,9 @@
                 justify-content: center;
                 font-size: FZ(12);
                 letter-spacing: 0.08em;
+                @include sp {
+                    justify-content: flex-start;
+                }
             }
         }
     }

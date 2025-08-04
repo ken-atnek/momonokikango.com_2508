@@ -68,11 +68,13 @@ export default function PageCompany() {
             ※年末年始（12月30日～1月3日）は営業しておりません。
           </dd>
         </dl>
-        <article>
+        <article className={styles.blockShopInfo}>
           <h3>所在地</h3>
           <address>
             <span>〒869-5305</span>
-            熊本県葦北郡芦北町田浦町653サテライトオフィス田浦202
+            熊本県葦北郡芦北町田浦町653
+            <br className="sp" />
+            サテライトオフィス田浦202
           </address>
           <div className={styles.boxImage}>
             <figure>
@@ -90,6 +92,8 @@ export default function PageCompany() {
               </figcaption>
             </figure>
           </div>
+        </article>
+        <article className={styles.blockMap}>
           <div className={styles.itemMap}>
             <iframe
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqa8wAjowaHsfJHqNUZKjoeuMPa7-67eQ&q=32.3639616,130.5080452&zoom=15"

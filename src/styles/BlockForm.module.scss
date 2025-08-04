@@ -19,11 +19,18 @@
         font-size: FZ(30);
         border-bottom: 1px solid #000;
         padding-bottom: 0.3em;
+        @include sp {
+            font-size: FZ(24);
+        }
     }
     .sidebarH3 {
         font-size: FZ(16);
         letter-spacing: 0.04em;
         line-height: 1.6em;
+        @include sp {
+            font-size: FZ(14);
+            margin-top: 2vw;
+        }
     }
     .itemDetail {
         font-size: inherit;

@@ -16,20 +16,33 @@
     flex-direction: column;
     align-items: center;
     padding: 5em 2em 8em;
+    @include sp {
+        padding: 6vw 4vw 6vw;
+    }
     h3 {
         font-size: FZ(30);
         text-align: center;
         line-height: 1.6em;
         letter-spacing: 0.04em;
+        @include sp {
+            font-size: FZ(26);
+        }
     }
     .boxDetail {
         font-size: inherit;
         max-width: 94rem;
         margin-top: 3em;
+        @include sp {
+            max-width: unset;
+            margin-top: 6vw;
+        }
         p {
             font-size: FZ(18);
             letter-spacing: 0.04em;
             line-height: 1.8em;
+            @include sp {
+                font-size: FZ(16);
+            }
         }
     }
 }

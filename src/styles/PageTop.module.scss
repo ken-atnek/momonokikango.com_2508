@@ -17,42 +17,78 @@
     background: url(../assets/images/top/head-bg.webp) no-repeat center
         center/cover;
     padding: 5em 0 0;
-
-    .boxTitle {
+    @include sp {
+        padding: 6vw 0 0 0;
+    }
+    .blockTitle {
         font-size: inherit;
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(#fff, 0.75);
-        align-self: flex-start;
-        padding: 5em 8em 5em 5em;
-        gap: 1.4em 0;
-        p {
-            font-size: FZ(42);
-            letter-spacing: 0.04em;
+        display: contents;
+        @include sp {
+            display: flex;
+            padding: 0 4vw 6vw;
         }
-        span {
-            position: relative;
-            font-size: FZ(26);
-            padding-left: 2.6em;
-            letter-spacing: 0.04em;
-            &::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                translate: 0 -50%;
-                left: 0;
-                width: 2em;
-                background: url(../assets/images/top/head-title-icon.webp)
-                    no-repeat center center/contain;
-                aspect-ratio: 340/303;
+        .boxTitle {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(#fff, 0.75);
+            align-self: flex-start;
+            padding: 5em 8em 5em 5em;
+            gap: 1.4em 0;
+            @include sp {
+                padding: 10vw 4vw 14vw;
+                align-items: center;
+                gap: 16vw 0;
+                width: 100%;
+            }
+            p {
+                font-size: FZ(42);
+                letter-spacing: 0.04em;
+                @include sp {
+                    font-size: FZ(34);
+                    line-height: 1.4em;
+                    text-align: center;
+                }
+            }
+            span {
+                position: relative;
+                font-size: FZ(26);
+                padding-left: 2.6em;
+                letter-spacing: 0.04em;
+                @include sp {
+                    font-size: FZ(18);
+                    padding-left: unset;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    translate: 0 -50%;
+                    left: 0;
+                    width: 2em;
+                    background: url(../assets/images/top/head-title-icon.webp)
+                        no-repeat center center/contain;
+                    aspect-ratio: 340/303;
+                    @include sp {
+                        top: unset;
+                        left: 50%;
+                        translate: -50%;
+                        bottom: calc(100% + 2vw);
+                        width: 3em;
+                    }
+                }
             }
         }
     }
+
     .blockHead {
         background-color: rgba($base-pink, 0.9);
         display: flex;
         flex-direction: column;
         margin-top: 8em;
+        @include sp {
+            margin-top: 0;
+        }
         h2 {
             text-align: center;
             @include SunSerif;
@@ -61,6 +97,9 @@
             padding-block: 0.8em;
             font-weight: 600;
             background-color: $base-pink;
+            @include sp {
+                font-size: FZ(16);
+            }
         }
         nav {
             align-self: center;
@@ -70,6 +109,11 @@
             font-size: inherit;
             gap: 0 2em;
             padding: 5em 0 8em;
+            @include sp {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 8vw 4vw;
+                gap: 6vw 4vw;
+            }
         }
     }
     .blockVision {
@@ -77,6 +121,11 @@
         display: flex;
         justify-content: center;
         padding: 5em 0 5em;
+        @include sp {
+            flex-direction: column;
+            padding: 8vw 4vw;
+            gap: 8vw 0;
+        }
         .blockInner {
             font-size: inherit;
             display: flex;
@@ -85,6 +134,9 @@
             align-self: center;
             z-index: 2;
             gap: 0 3em;
+            @include sp {
+                display: contents;
+            }
             .boxContents {
                 background-color: #fcfdc0;
                 font-size: inherit;
@@ -94,14 +146,26 @@
                 gap: 2em 0;
                 display: flex;
                 flex-direction: column;
+                @include sp {
+                    min-width: unset;
+                    width: 100%;
+                    padding: 4vw 4vw;
+                    gap: 6vw 0;
+                }
                 h3 {
                     font-size: FZ(42);
+                    @include sp {
+                        font-size: FZ(30);
+                    }
                 }
                 p {
                     font-size: FZ(18);
                     text-align: justify;
                     letter-spacing: 0.04em;
                     line-height: 1.8em;
+                    @include sp {
+                        font-size: FZ(16);
+                    }
                 }
             }
         }

@@ -17,6 +17,9 @@
     align-items: center;
     padding: 5em 2em 8em;
     gap: 3em 0;
+    @include sp {
+        padding: 6vw 4vw 6vw;
+    }
     .blockImage {
         display: flex;
         flex-direction: column;
@@ -25,10 +28,17 @@
         padding-top: 3em;
         gap: 3em 0;
         padding-bottom: 3em;
+        @include sp {
+            padding-top: 6vw;
+            gap: 4vw 0;
+        }
         h3 {
             font-size: FZ(40);
             align-self: center;
             letter-spacing: 0.04em;
+            @include sp {
+                font-size: FZ(30);
+            }
         }
         .boxImage {
             width: 100%;
