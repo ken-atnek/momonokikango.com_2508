@@ -57,7 +57,7 @@ const BlockFormContact = () => {
 
     try {
       const response = await fetch(
-        'https://demo-momonokikango.tuna-pic.co.jp/backend/contact02.php',
+        'https://momonokikango.com/backend/contact02.php',
         {
           method: 'POST',
           body: formData,

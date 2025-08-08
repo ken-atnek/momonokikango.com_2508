@@ -52,7 +52,7 @@ const BlockFormCaseStudy = () => {
     formData.append('listItem', listItem);
     try {
       const response = await fetch(
-        'https://demo-momonokikango.tuna-pic.co.jp/backend/contact.php',
+        'https://momonokikango.com/backend/contact.php',
         {
           method: 'POST',
           body: formData,

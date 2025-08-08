@@ -3,8 +3,8 @@
 * お問い合せフォーム
 * URL:public/backend/contact.php
 * Referenced in: /page.tsx,
- * Created: 2025-08-02
- * Last updated: 2025-08-02
+* Created: 2025-08-02
+* Last updated: 2025-08-02
 * ======================================= */
 
 
@@ -22,12 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 	// 📩 **メールの設定**
-	$to = "ken.atnek@gmail.com";
-	// $to = "info@momonoki-st.co.jp";
+	// $to = "ken.atnek@gmail.com";
+	$to = "info@momonoki-st.co.jp";
 	$to_name = "ももの木訪問看護ステーション";
 	$send_date = date("Y/n/j-H:i", time());
 	$from_name = "ももの木訪問看護ステーション 安否確認";
-	$from_email = "contact@demo-momonokikango.tuna-pic.co.jp";  //
+	$from_email = "contact@momonokikango.com";  //
 	// **エンコーディング設定**
 	$orgEncoding = mb_internal_encoding();
 	mb_language("uni");
