@@ -21,8 +21,7 @@ const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
 // 本番のみ metadataBase を設定
 const metadataBase = isRealProduction
   ? new URL(
-      process.env.NEXT_PUBLIC_METADATA_BASE ||
-        'https://www.shirakawa-chuo-cc.com/'
+      process.env.NEXT_PUBLIC_METADATA_BASE || 'https://momonokikango.com//'
     )
   : undefined;
 
