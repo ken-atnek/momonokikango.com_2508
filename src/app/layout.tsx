@@ -1,8 +1,9 @@
 /* =======================================
- *ももの木訪問看護ステーション Layout
- * URL:src/app/layout.tsx
+ * ももの木訪問看護ステーション Layout
+ * URL: /src/app/layout.tsx
+ * Referenced in: /src/app/layout.tsx
  * Created: 2025-07-14
- * Last updated: 2025-07-14
+ * Last updated: 2026-08-25
  * ======================================= */
 
 import type { Metadata } from 'next';
@@ -10,42 +11,46 @@ import '@/styles/globals.scss';
 import { Zen_Old_Mincho } from 'next/font/google';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
+import { metadataBase, siteDescription, siteName, siteTitle } from '@/lib/env';
+
 const zenOldMincho = Zen_Old_Mincho({
   subsets: ['latin'],
   weight: ['400', '500'],
   display: 'swap',
 });
-// 実際の本番環境かどうかを判定
-const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
-
-// 本番のみ metadataBase を設定
-const metadataBase = isRealProduction
-  ? new URL(
-      process.env.NEXT_PUBLIC_METADATA_BASE || 'https://momonokikango.com//'
-    )
-  : undefined;
 
 export const metadata: Metadata = {
-  ...(isRealProduction && {
-    metadataBase,
-    openGraph: {
-      url: metadataBase?.toString(),
-      type: 'website',
-      images: [
-        {
-          url: '/ogp.png',
-          width: 1200,
-          height: 630,
-          alt: 'ももの木訪問看護ステーションのOGP画像',
+  title: {
+    default: siteTitle,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  ...(metadataBase
+    ? {
+        metadataBase,
+        alternates: {
+          canonical: '/',
         },
-      ],
-    },
-  }),
-  title: 'ももの木訪問看護ステーション',
-  description: isRealProduction
-    ? '芦北、水俣、津奈木エリアの訪問看護ステーションです。「住み慣れた地域で障がいや病気があっても暮らし続けたい」と思う時にお役にたてる事業所としてももの木訪問看護ステーションを活用してください。'
-    : undefined,
-  robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
+        openGraph: {
+          title: siteTitle,
+          description: siteDescription,
+          url: metadataBase.toString(),
+          siteName,
+          locale: 'ja_JP',
+          type: 'website',
+          images: [
+            {
+              url: '/ogp.png',
+              width: 1200,
+              height: 630,
+              alt: 'ももの木訪問看護ステーションのOGP画像',
+            },
+          ],
+        },
+      }
+    : {
+        robots: 'noindex, nofollow',
+      }),
   icons: {
     icon: [
       // { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
