@@ -39,7 +39,13 @@ export default function PageCompany() {
           <dt>代表者</dt>
           <dd>矢野　昌子</dd>
           <dt>スタッフ数</dt>
-          <dd></dd>
+          <dd>
+            看護職員　常勤5名・非常勤2名
+            <br />
+            理学療法士・作業療法士　常勤2名
+            <br />
+            看護補助職員　常勤1名
+          </dd>
           <dt>電話番号</dt>
           <dd>
             <ExternalLink href="tel:0966838522" aria-label="電話する">

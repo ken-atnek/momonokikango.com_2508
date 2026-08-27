@@ -16,6 +16,20 @@
     flex-direction: column;
     align-items: center;
     padding: 5em 2em 8em;
+    gap: 2em 0;
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: solid 1px #b32056;
+        max-width: 100rem;
+        background-color: #fbd5e3;
+        padding: 2em 2em 4em;
+        @include sp {
+            max-width: unset;
+            padding: 4vw 2vw;
+        }
+    }
     @include sp {
         padding: 6vw 4vw;
     }
@@ -25,8 +39,11 @@
         line-height: 1.6em;
         letter-spacing: 0.04em;
         @include sp {
-            font-size: FZ(26);
+            font-size: FZ(22);
         }
+    }
+    .boxDetail + h3 {
+        margin-top: 3em;
     }
     .boxDetail {
         font-size: inherit;
